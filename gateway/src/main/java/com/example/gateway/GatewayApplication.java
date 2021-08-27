@@ -13,15 +13,14 @@ public class GatewayApplication {
     	return builder.routes()
 		.route(p -> p
 			.path("/user/hello","/user/signup", "/user/exists")
+			// .path("/user")
 			.uri("http://localhost:50055"))
 		.route(p -> p
-            .path("/get")
-            .filters(f -> f.addRequestHeader("Hello", "World"))
-            .uri("http://httpbin.org:80"))
+			.path("/log","/log/counts")
+			.uri("http://localhost:50051"))
         .build();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
-
 }
