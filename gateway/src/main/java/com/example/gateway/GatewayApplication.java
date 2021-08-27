@@ -16,7 +16,7 @@ public class GatewayApplication {
 			// .path("/user")
 			.uri("http://localhost:50055"))
 		.route(p -> p
-			.path("/log","/log/counts")
+			.path("/log","/log/counts", "/log/ping")
 			.uri("http://localhost:50051"))
         .build();
 	}
