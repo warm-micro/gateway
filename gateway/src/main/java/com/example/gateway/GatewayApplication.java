@@ -12,12 +12,11 @@ public class GatewayApplication {
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
     	return builder.routes()
 		.route(p -> p
-			.path("/user/hello","/user/signup", "/user/exists")
-			// .path("/user")
-			.uri("http://localhost:50055"))
+			.path("/user/hello","/user/signup", "/user/exists", "/user/authenticate")
+			.uri("http://34.64.132.4:50055"))
 		.route(p -> p
 			.path("/log","/log/counts", "/log/ping")
-			.uri("http://localhost:50051"))
+			.uri("http://13.124.188.6:50051"))
         .build();
 	}
 	public static void main(String[] args) {
